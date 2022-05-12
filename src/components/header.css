@@ -1,0 +1,21 @@
+.header-main {
+  padding: 5px 0;
+}
+.header-main li {
+  font-size: 17px;
+}
+.user-list-main ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 15px;
+}
+.user-list-main li {
+  text-align: left;
+  list-style: none;
+}
+li {
+  font-size: 14px;
+  color: #8a8b8f;
+  font-weight: bolder;
+}

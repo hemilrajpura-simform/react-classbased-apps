@@ -1,0 +1,104 @@
+.user-list-main {
+  width: 96%;
+}
+.userShow-main img {
+  border-radius: 50%;
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+}
+
+.userShow-main h4 {
+  color: #6a6b6e;
+  margin: 2px 0;
+}
+.userShow-main p {
+  opacity: 0.8;
+  font-size: 0.8rem;
+  display: contents;
+}
+.userShow-main h3 {
+  opacity: 0.8;
+}
+.userShow-main button {
+  border: none;
+  background: #feb24b;
+  border-radius: 5px;
+  padding: 8px 29px;
+  color: white;
+  font-weight: bold;
+}
+.statistic-main {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.statistic-main h2 {
+  opacity: 0.8;
+}
+.userShow-main h5 {
+  opacity: 0.8;
+  text-align: left;
+  margin-bottom: 8px;
+}
+.plan-uses-line {
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+  background: #feb24b;
+}
+.plan-uses-line-front {
+  height: 4px;
+  width: 100%;
+  border-radius: 5px;
+  /* background: ; */
+}
+.statistic-main p {
+  font-size: 0.7rem;
+}
+.statistic-line {
+  background-color: #a4a5a885;
+  height: 50px;
+  width: 1px;
+  border-radius: 10px;
+}
+.userShow-main {
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 0.8s;
+}
+button {
+  margin: 0 10px;
+  border: none;
+  background: cadetblue;
+  color: white;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 15px;
+  padding: 1px 7px;
+  cursor: pointer;
+  border: 1px solid white;
+
+}
+#notFound{ align-items: center; display: flex; padding: 10px; }
+.darkMode-main {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+#darkMode-btn{
+  background-color: #202a2a;
+}
+.RefreshCw {
+  height: 20px;
+  margin: 0 2px;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    /* width: 0%; */
+  }
+  to {
+    opacity: 1;
+    /* width: 100%;  */
+  }
+}

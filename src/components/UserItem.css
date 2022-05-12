@@ -1,0 +1,26 @@
+.user-item-main ul {
+  display: flex;
+  justify-content: space-around;
+  cursor: pointer;
+}
+.user-item-main ul:hover { background-color: white; }
+.user-item-main li {
+  list-style: none;
+  text-align: left;
+}
+.image-username {display: flex;}
+.user-name {
+  font-size: 14px; font-weight: bold;
+}
+.email {
+  font-size: 10px;
+}
+.user-item-main img {
+  height: 40px;
+  width: 40px;
+  object-fit: cover;
+  border-radius: 72%;
+  margin: 0 5px;
+}
+.access-icon{ display: flex;    justify-content: space-between; }
+.active{ color: #5bcb9d; }
