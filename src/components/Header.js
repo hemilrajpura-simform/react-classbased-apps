@@ -1,19 +1,22 @@
-
-
 import React from 'react';
 import './header.css';
 
-const UserList = (props) => {
+class UserList extends React.Component {
 
-    return (
-        <div className='header-main'>
-        <ul>
-            <li>Name</li>
-            <li>Status</li>
-            <li>Access</li>
-            
-        </ul>
-        </div>
-    );
+    constructor(props) {
+        super(props);
+    }
+    render() {
+        return (
+            <div className='header-main'>
+                <ul>
+                    <li>Name</li>
+                    <li>Status</li>
+                    <li>Access</li>
+
+                </ul>
+            </div>
+        )
+    }
 };
 export default React.memo(UserList);
