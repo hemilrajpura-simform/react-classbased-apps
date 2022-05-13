@@ -1,13 +1,26 @@
-import React from 'react';
+import React, { Key } from 'react';
 import './UserItem.css';
 import { Trash, Lock, ChevronDown } from 'react-feather';
 
-const UserItem = (props:any) => {
+
+interface MyProps {
+    image: string,
+    username: string,
+    email: string,
+    access: string,
+    showPopupHandler:  (item: any) => void,
+    status: boolean,
+    userId:Key | null | undefined,
+    id:Key | null | undefined,
+    closePopup:() => void
+}
+
+const UserItem = (props: MyProps) => {
     return (
         <div onMouseEnter={() => {
             props.showPopupHandler(props)
         }}
-            
+
             className='user-item-main'>
             <ul>
                 <li className='image-username'>
@@ -15,8 +28,8 @@ const UserItem = (props:any) => {
                         <img
                             src={props.image}
                             alt={props.username} />
-                      
-                             </div>
+
+                    </div>
                     <div>
                         <p className='user-name'>{props.username}</p>
                         <p className='email'>{props.email}</p>

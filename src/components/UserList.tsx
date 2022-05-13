@@ -52,7 +52,7 @@ class UserList extends React.Component<UserListType,any> {
     closePopup = () => {
         this.setState({ showPopup: false });
     };
-    showPopupHandler = (item: string) => {
+    showPopupHandler = (item:  {id: React.Key | null | undefined,first_name: string,last_name: string,avatar: any,email: any,status: any,access: string}): void => {
         this.setState({ showPopup: true });
         this.setState({ selectedUser: item });
     };
