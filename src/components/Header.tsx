@@ -3,7 +3,7 @@ import './header.css';
 
 class UserList extends React.Component {
 
-    constructor(props) {
+    constructor(props:any) {
         super(props);
     }
     render() {

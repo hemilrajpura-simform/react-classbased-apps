@@ -1,4 +1,4 @@
-import React from "react";
+import React, { CSSProperties } from "react";
 import UserItem from "./UserItem";
 import Header from "./Header";
 import PageNotFound from "./PageNotFound";
@@ -7,8 +7,19 @@ import Popup from "./Popup";
 import Loading from "./Loading";
 import { Moon, Sun } from "react-feather";
 
-class UserList extends React.Component {
-    constructor(props) {
+interface UserListType {
+    showPopup: boolean,
+    selectedUser: string | number | null,
+    pageFound: boolean,
+    pageLoading: boolean,
+    currentPage: number|string,
+    user: string[],
+    darkMode:boolean,
+    darkModeStyle:CSSProperties,
+    darkModeHandler:()=>void
+}
+class UserList extends React.Component<UserListType,any> {
+    constructor(props:UserListType) {
         super(props);
         this.state = {
             showPopup: false,
@@ -27,7 +38,7 @@ class UserList extends React.Component {
     //     this.loadUsersFromAPI();
     // }
 
-    paginationHandler = (number) => {
+    paginationHandler = (number:string | number) => {
          if (number === "reload") {
             this.setState({ currentPage: 1 });
             return;
@@ -41,7 +52,7 @@ class UserList extends React.Component {
     closePopup = () => {
         this.setState({ showPopup: false });
     };
-    showPopupHandler = (item) => {
+    showPopupHandler = (item: string) => {
         this.setState({ showPopup: true });
         this.setState({ selectedUser: item });
     };
@@ -74,8 +85,8 @@ class UserList extends React.Component {
             {this.state.pageLoading && <Loading />} 
             {this.state.pageFound && <PageNotFound paginationHandler={this.paginationHandler} />} 
             <div>
-                <div className='main-container' style={this.props.darkMode ? this.props.darkModeStyle : null} onMouseLeave={this.closePopup}>
-                    <div className='user-list-main' style={this.props.darkMode ? this.props.darkModeStyle : null}>
+                <div className='main-container' style={this.props.darkMode ? this.props.darkModeStyle : undefined} onMouseLeave={this.closePopup}>
+                    <div className='user-list-main' style={this.props.darkMode ? this.props.darkModeStyle : undefined}>
                         <div className='darkMode-main'>
 
                             <button onClick={this.props.darkModeHandler} id="darkMode-btn">
@@ -86,8 +97,8 @@ class UserList extends React.Component {
 
                         <Header />
                         {
-                            this.state.user.map(item => (
-                                <div key={item.id} style={this.props.darkMode ? this.props.darkModeStyle : null} >
+                            this.state.user.map((item: { id: React.Key | null | undefined; first_name: string; last_name: string; avatar: any; email: any; status: any; access: string; }) => (
+                                <div key={item.id} style={this.props.darkMode ? this.props.darkModeStyle : undefined} >
                                     <UserItem
                                         showPopupHandler={this.showPopupHandler}
                                         username={item.first_name + " " + item.last_name}
@@ -104,11 +115,11 @@ class UserList extends React.Component {
                         }
                         <div className='pagination'>
                             <button
-                                style={this.state.currentPage === 1 ? this.paginationStyle : null}
+                                style={this.state.currentPage === 1 ? this.paginationStyle :undefined}
                                 onClick={() => this.paginationHandler(1)}>1</button>
 
                             <button
-                                style={this.state.currentPage === 2 ? this.paginationStyle : null}
+                                style={this.state.currentPage === 2 ? this.paginationStyle : undefined}
                                 onClick={() => this.paginationHandler(2)}>2</button>
                         
                         </div>

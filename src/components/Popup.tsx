@@ -3,8 +3,8 @@ import React from 'react';
 import './UserList';
 
 
-class Popup extends React.Component {
-    constructor(props) {
+class Popup extends React.Component<any,any> {
+    constructor(props:any) {
         super(props);
     }
 
@@ -16,7 +16,7 @@ class Popup extends React.Component {
         width: this.planUses + '%'
     };
     
-    redner() {
+    render() {
         return (
             <div>
 
@@ -47,7 +47,7 @@ export default Popup;
 
 
 
-// const Popup = (props) => {
+// const Popup = (props:any) => {
 
 
 //     var MonthlyClicks = Math.floor(Math.random() * 10000);

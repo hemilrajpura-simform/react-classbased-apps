@@ -3,7 +3,7 @@ import './UserList.css';
 import { Loader } from 'react-feather';
 
 class Loading extends React.Component {
-    constructor(props) {
+    constructor(props:any) {
         super(props);
     }
     render() {

@@ -2,7 +2,7 @@ import React from 'react';
 import './UserItem.css';
 import { Trash, Lock, ChevronDown } from 'react-feather';
 
-const UserItem = (props) => {
+const UserItem = (props:any) => {
     return (
         <div onMouseEnter={() => {
             props.showPopupHandler(props)

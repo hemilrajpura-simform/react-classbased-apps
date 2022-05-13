@@ -2,10 +2,13 @@ import React from 'react'
 import './UserList.css';
 import { RefreshCw } from 'react-feather';
 
+interface MyProps {
+    paginationHandler:(number: string | number) => void
+}
 
-
-class PageNotFound extends React.Component {
-    constructor(props) {
+class PageNotFound extends React.Component<MyProps,any> {
+    // eslint-disable-next-line @typescript-eslint/no-useless-constructor
+    constructor(props: MyProps | Readonly<MyProps>) {
         super(props);
     }
     reloadHandler = () => {
